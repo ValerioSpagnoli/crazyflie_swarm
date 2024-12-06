@@ -4,7 +4,6 @@ import rclpy
 from geometry_msgs.msg import Twist
 from rclpy.node import Node, Publisher
 
-from crazyflie_swarm_interfaces.msg import CrazyflieState
 from crazyflie_swarm_pkg.utils import SwarmConfig, load_config
 
 
@@ -47,10 +46,6 @@ class CrazyflieTeleopNode(Node):
                 lambda name=name, publisher=publisher: self.velocity_callback(name, publisher),
             )
 
-        # * Hardcoded publisher for one "simulated" cf
-        # self.cf_publisher : Publisher = self.create_publisher(CrazyflieState, f"/cf3/state", 10)
-        # self.create_timer(0.1, self.cf_callback)
-
         # * Subscriptions
         self.cmd_vel_subscriber = self.create_subscription(
             Twist, "/cmd_vel", self.cmd_vel_callback, 10
@@ -69,14 +64,6 @@ class CrazyflieTeleopNode(Node):
         velocity_msg.angular.y = 0.0
         velocity_msg.angular.z = self.current_cmd_vel.angular.z
         publisher.publish(velocity_msg)
-
-    def cf_callback(self) -> None:
-        msg: CrazyflieState = CrazyflieState()
-        msg.position[0] = 0.2
-        msg.position[1] = 0.25
-        msg.position[2] = 0.13
-        self.cf_publisher.publish(msg)
-
 
 def main(args: Any = None) -> None:
     rclpy.init(args=args)
