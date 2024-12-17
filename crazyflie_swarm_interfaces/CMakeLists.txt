@@ -17,7 +17,6 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/CrazyflieState.msg"
   "srv/TakeOff.srv"
   "srv/Land.srv"
-  "srv/ForwardMotion.srv"
   DEPENDENCIES std_msgs geometry_msgs
 )
 

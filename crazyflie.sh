@@ -1,0 +1,7 @@
+alias swarm='ros2 launch crazyflie_swarm_pkg swarm.launch.py'
+alias teleop='ros2 launch crazyflie_swarm_pkg teleop.launch.py'
+alias simulation='ros2 launch crazyflie_simulation_pkg crazyflie_simulation.launch.py'
+alias takeoff='ros2 service call /take_off crazyflie_swarm_interfaces/srv/TakeOff "{height: 0.3, duration: 2}"'
+alias flocking='ros2 launch crazyflie_flocking_pkg flocking.launch.py'
+alias land='ros2 service call /land crazyflie_swarm_interfaces/srv/Land "{duration: 3}"'
+alias record='cd /home/neverorfrog/code/crazyflie/crazyflie_swarm/ros_bag && ros2 bag record --all'

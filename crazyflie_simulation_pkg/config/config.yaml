@@ -1,0 +1,18 @@
+state_publisher_rate: 5.0
+velocity_publisher_rate: 5.0
+max_ang_z_rate: 0.4
+height: 0.2
+
+crazyflies:
+  - name: cf1
+    active: False 
+    incoming_twist_topic: "/cmd_vel"
+  - name: cf2
+    active: True
+    incoming_twist_topic: "/cmd_vel"
+  - name: cf3
+    active: False
+    incoming_twist_topic: "/cmd_vel"
+  - name: cf4
+    active: False
+    incoming_twist_topic: "/cmd_vel"

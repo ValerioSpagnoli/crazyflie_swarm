@@ -3,17 +3,10 @@ project(crazyflie_swarm_pkg)
 
 # Find Python install and ROS 2 components
 find_package(ament_cmake REQUIRED)
-find_package(rclpy REQUIRED)
-find_package(crazyflie_swarm_interfaces REQUIRED)  # Dependency on custom messages
+find_package(ament_cmake_python REQUIRED)
 
 # Install Python modules
 ament_python_install_package(${PROJECT_NAME})
-
-# Install Python scripts (nodes)
-install(
-  DIRECTORY src/
-  DESTINATION lib/${PROJECT_NAME}
-)
 
 # Install launch files (if you have any)
 install(

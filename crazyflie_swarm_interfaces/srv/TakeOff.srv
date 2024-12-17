@@ -1,4 +1,4 @@
 float32 height
-float32 velocity
+float32 duration
 ---
 bool success

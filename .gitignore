@@ -1,9 +1,15 @@
 .vscode
+rw_cache
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
+build
+install
+log
+rw_cache
 
 # C extensions
 *.so
